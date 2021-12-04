@@ -1,0 +1,33 @@
+{   
+
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "ES5",
+        "strict": true,
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+              "src/*"
+            ]
+        },
+        "moduleResolution": "node",
+
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ]
+    },
+    "include": [
+        "./front-src/**/*.vue",
+        "./front-src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+
+
+
+}
