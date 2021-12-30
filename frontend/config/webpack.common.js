@@ -35,7 +35,11 @@ module.exports = {
                     // },
                     // 'postcss-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                type: 'asset',
+            },
         ]
     },
     resolve:{

@@ -10,10 +10,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "types": [
       "node"
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
