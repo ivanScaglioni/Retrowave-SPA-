@@ -40,6 +40,11 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 type: 'asset',
             },
+            {
+                test: /\.mp3$/,
+                include: path.resolve(__dirname, '../public'),
+                loader: 'file-loader'
+            }
         ]
     },
     resolve:{

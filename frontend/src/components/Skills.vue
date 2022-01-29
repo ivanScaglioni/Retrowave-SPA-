@@ -1,6 +1,5 @@
 <template>
     <section id="skills">
-
         <div class="tabs">
             <button @click="see('skill')">all</button>
             <button @click="see('frontend')" >frontend</button>
@@ -9,47 +8,47 @@
         </div>
         <div id="skills-container">
             <div class="skill frontend" >
-                <h4 class="name-skill">Javascript  </h4>
+                <p class="name-skill">Javascript  </p>
                 <img class="logo-skill" src="../../public/img/logos/js-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">Typescript</h4>
+                <p class="name-skill">Typescript</p>
                 <img class="logo-skill" src="../../public/img/logos/ts-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">Vue</h4>
+                <p class="name-skill">Vue</p>
                 <img class="logo-skill" src="../../public/img/logos/vue-logo.png" >
             </div>
             <div class="skill backend">
-                <h4 class="name-skill">Nodejs</h4>
+                <p class="name-skill">Nodejs</p>
                 <img class="logo-skill" src="../../public/img/logos/node-logo.png" >
             </div>
             <div class="skill others">
-                <h4 class="name-skill">Git</h4>
+                <p class="name-skill">Git</p>
                 <img class="logo-skill" src="../../public/img/logos/git-logo.png" >
             </div>
             <div class="skill backend">
-                <h4 class="name-skill">MongoDB</h4>
+                <p class="name-skill">MongoDB</p>
                 <img class="logo-skill" src="../../public/img/logos/mongo-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">Webpack</h4>
+                <p class="name-skill">Webpack</p>
                 <img class="logo-skill" src="../../public/img/logos/wp-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">CSS</h4>
+                <p class="name-skill">CSS</p>
                 <img class="logo-skill" src="../../public/img/logos/css-logo.png" >
             </div>
             <div class="skill others">
-                <h4 class="name-skill">Postman</h4>
+                <p class="name-skill">Postman</p>
                 <img class="logo-skill" src="../../public/img/logos/pm-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">Boostrap</h4>
+                <p class="name-skill">Boostrap</p>
                 <img class="logo-skill" src="../../public/img/logos/bt-logo.png" >
             </div>
             <div class="skill frontend">
-                <h4 class="name-skill">HTML</h4>
+                <p class="name-skill">HTML</p>
                 <img class="logo-skill" src="../../public/img/logos/html-logo.png" >
             </div>
         </div>
@@ -71,7 +70,6 @@ export default defineComponent({
         }
     },
     methods:{
-
         async see(seeSkill:string){
             const skills = await document.getElementsByClassName('skill') as HTMLCollectionOf<HTMLElement>;
             const arr = Array.from(skills, skill => skill.className );
@@ -98,15 +96,16 @@ export default defineComponent({
 <style>
 
 #skills{
-    
-    background-color: greenyellow;
+    display: grid;
+    background-color: transparent;
     margin: auto;
+    
 }
 
 
 .logo-skill{
-    width: 70px;
-    height: 70px;
+    width: 4vw;
+    
     object-fit: cover;
 }
 
@@ -119,8 +118,23 @@ export default defineComponent({
 
 #skills-container{
     display: flex;
+    border: 3px solid blue;
     flex-wrap: wrap;
+    color: yellow;
+    justify-self: center;
+    align-self: start;
+    position: relative;
+    
 }
+.tabs{
+    position: absolute;
+    top: 10px;
+    border: 3px solid white;
+    justify-self: center;
+    align-self: stretch;
+    height: 80px;
+}
+
 
 
 
