@@ -1,10 +1,13 @@
 <template>
-    <div>
+    <div >
         <audio id="st"  >
             <source id="tecla" src="../../public/tecla-001.mp3" type="audio/mpeg"> 
         </audio>
 
-        <div class="myname">{{name}} <div class="barra">|</div> </div>
+        <div class="conta">
+            <div class="myname" >{{name}}<div class="barra " id="barra1">|</div></div>
+            <div class="des">{{description}}<div class="barra " id="barra2">|</div></div>
+        </div>
 
         
         <div class="contact">
@@ -32,7 +35,8 @@ export default defineComponent({
     data(){
         return{
             
-            name:''
+            name:'',
+            description:''
         }
     },
     methods:{
@@ -43,20 +47,33 @@ export default defineComponent({
     },
     mounted(){
         const n = 'Iván_Scaglioni';
+        const k = 'Web Development----------------';
         var pos = 0;
         console.log("la puta madre harry");
-        const mya = document.getElementById('st')  as HTMLAudioElement
+        
+        const mya = document.getElementById('st')  as HTMLAudioElement;
+        const b1 = document.getElementById('barra1') as HTMLElement;
+        const b2 = document.getElementById('barra2') as HTMLElement;
         const setIntervalConst: ReturnType<typeof setInterval> = setInterval(() => {
             this.name += n[pos];
             pos++;
-            mya.play();
-            if (pos >= 14){
+            //mya.play();
+            if (pos >= n.length){
                 clearInterval(setIntervalConst);
-                
+                pos=0;
+                b1.style.display= "none";
+                b2.style.visibility ="visible";
+                const setIntervalConst2: ReturnType<typeof setInterval> = setInterval(() => {
+                    this.description += k[pos];
+                    pos++;
+                    if (pos >=  k.length){
+                        clearInterval(setIntervalConst2);
+                    }
+                }, 250);
             }
-        }, 100);
+        }, 250);
 
-        setIntervalConst;
+        // setIntervalConst;
 
     
     }
@@ -71,12 +88,25 @@ export default defineComponent({
 
 
 <style>
+
+
+
 .myname{
     font-size: 7vw;
-    display: flex;
+    display: flex ;
     letter-spacing: 1vw;
     font-family: 'Courier New', Courier, monospace;
-    
+
+   
+}
+
+
+#barra2{
+    visibility:hidden;
+}
+.des{
+    display: flex;
+    font-size: 2vw;
 }
 
 #tecla{
