@@ -1,16 +1,18 @@
 <template>
+
     <div >
+       <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lemonada&family=Nova+Cut&family=Oi&family=Plaster&family=Poiret+One&display=swap" rel="stylesheet">
         <audio id="st"  >
             <source id="tecla" src="../../public/tecla-001.mp3" type="audio/mpeg"> 
         </audio>
 
         <div class="conta">
             <div class="myname" >{{name}}<div class="barra " id="barra1">|</div></div>
-            <div class="des">{{description}}<div class="barra " id="barra2">|</div></div>
+            <div class="des">{{description}}<div class="barra "  id="barra2">|</div></div>
         </div>
 
         
-        <div class="contact">
+        <!-- <div class="contact">
             <div>
                 github
             </div>
@@ -20,7 +22,7 @@
             <div>
                 gmail
             </div>
-        </div>
+        </div> -->
     </div>
 
 </template>
@@ -46,8 +48,8 @@ export default defineComponent({
 
     },
     mounted(){
-        const n = 'Iván_Scaglioni';
-        const k = 'Web Development----------------';
+        const n = 'Iván Scaglioni';
+        const k = '.';
         var pos = 0;
         console.log("la puta madre harry");
         
@@ -92,10 +94,13 @@ export default defineComponent({
 
 
 .myname{
-    font-size: 7vw;
+    text-align: center;
+    font-size: 50px;
     display: flex ;
     letter-spacing: 1vw;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Nova Cut', cursive;
+    color: #9aa0a6; ;
+
 
    
 }
@@ -125,6 +130,7 @@ export default defineComponent({
     animation-direction: alternate; 
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+    visibility: hidden;
 }
 
 @keyframes parpadeo{

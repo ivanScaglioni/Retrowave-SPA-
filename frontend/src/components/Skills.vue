@@ -89,6 +89,7 @@ export default defineComponent({
 
 
 
+
 })
 </script>
 
@@ -96,43 +97,57 @@ export default defineComponent({
 <style>
 
 #skills{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     background-color: transparent;
-    margin: auto;
+    overflow: auto;
     
 }
 
 
 .logo-skill{
-    width: 4vw;
-    
+    width: 50px;
     object-fit: cover;
+    filter: grayscale(100%);
+    transition-duration: 0.5s;
+}
+
+.logo-skill:hover{
+    filter: contrast(3);
+    filter: saturate(3);
+    filter: brightness(0.9);
+    filter: grayscale(0);
+    transform: scale(1.5);
 }
 
 .ocultar{
     display: none;
 }
+
 .skill{
-    padding: 10px;
+    display: flex;
+    min-width: 90px;
+    min-height: 90px;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid red;
+
 }
 
 #skills-container{
     display: flex;
-    border: 3px solid blue;
+    border: 3px solid blue;  
     flex-wrap: wrap;
     color: yellow;
-    justify-self: center;
-    align-self: start;
-    position: relative;
+    
+    padding: 15px;
+    gap: 30px 30px;
+    justify-content: space-around;
+    
     
 }
 .tabs{
-    position: absolute;
-    top: 10px;
     border: 3px solid white;
-    justify-self: center;
-    align-self: stretch;
-    height: 80px;
 }
 
 
