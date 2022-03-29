@@ -6,9 +6,12 @@ const path = require('path');
 
 module.exports = {
     entry:'./src/main.ts',
+    
+    
     output:{
         path: path.resolve(__dirname, '../dist'),
-        filename:'my-app.bundle.js',
+        filename:'bundle.js',
+        
     },
     module:{
         rules:[
@@ -38,6 +41,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'file-loader',
                 type: 'asset',
             },
             {

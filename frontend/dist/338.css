@@ -1,0 +1,70 @@
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+.conta {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  align-self: flex-start;
+  width: 90vw;
+  min-width: 400px;
+  max-width: 1000px;
+  min-height: 1000px;
+  justify-content: center;
+}
+.logo-skill {
+  width: 5vw;
+  min-width: 70px;
+  /* #1b2838 */
+
+
+  border: 1px solid #b3dfff;
+
+  /* filter: grayscale(100%); */
+  transition-duration: 0.8s;
+}
+
+/* .logo-skill:hover{
+    filter: contrast(2);
+    filter: saturate(2);
+    transform: scale(1.5);
+    opacity: 1;
+    z-index: 100;
+    
+} */
+.ocultar {
+  display: none;
+}
+.skill {
+  display: block;
+  padding: 20px;
+  min-width: 130px;
+  min-height: 120px;
+  flex-direction: column;
+  border: 1px solid rebeccapurple;
+  text-align: center;
+}
+#skills-container {
+  width: 100%;
+  display: flex;
+  min-height: 500px;
+  flex-wrap: wrap;
+  color: yellow;
+  background: linear-gradient(
+    to bottom,
+    rgba(42, 71, 94, 1) 5%,
+    rgba(42, 71, 94, 0) 70%
+  );
+  
+  justify-content: center;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: lightblue;
+  font-size: 30px;
+}
+

@@ -1,0 +1,35 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    color: lightblue;
+    background-color: #1B2838;
+    font-size: 30px;
+}
+
+
+
+
+.section{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+.c{
+  
+ 
+  margin: auto;
+}
+.title{
+  font-size: 500%;
+  color:rgb(67, 116, 160);
+  text-align: center;
+}
+.back{
+ 
+  
+  color: lightblue;
+  background-color: #1B2838;
+}
+
+
