@@ -1,0 +1,98 @@
+@media all and (max-width: 1280px) {
+ 
+
+
+
+    /* ----------NAV---------- */
+    #responsive-menu{
+        height: 160vh;
+
+    }
+
+    .nav-menu{
+        gap: 10px 0px;
+    }
+
+    #menu-header{
+        min-height: 50px;
+    }
+
+    #menu{
+        max-height: 50px ;
+    }
+
+    #aboutme{
+        min-height: calc(100vh - 50px);
+    }
+    #a-menu{
+        display: none;
+    }
+
+    #btn-responsive{
+        display: flex;
+    }
+
+
+    /* ------------ ABOUT ME------------- */
+    @keyframes contraer {
+        from {
+          height: 660px;
+        }
+        to {
+          height: 0;
+          
+        }
+    }
+      
+    @keyframes expandir {
+        from {
+          height: 0;
+        }
+        to {
+          height: 660px;
+          
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    body{
+        font-size: var(--text-size-medium);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-medium);
+    }
+
+    .title{
+        font-size: var(--title-size-m);
+    }
+    
+
+}
+
+@media all and (min-width: 1280px) {
+
+
+    body{
+        font-size: var(--text-size-large);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-medium);
+    }
+
+    .title{
+        font-size: var(--title-size-l);
+    }
+
+    #a-menu{
+        font-size: var(--text-size-medium);
+    }
+
+}

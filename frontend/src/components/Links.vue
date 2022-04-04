@@ -1,8 +1,10 @@
 <template>
 
-  <section class="component " id="links">
-    <div id="contact-title" class="title">  Contact me </div>
-    
+  <section id="links">
+    <h2 id="contact-title">  Let's talk </h2>
+    <div id="contactme">
+
+    </div>
 
   </section>
 
@@ -24,6 +26,10 @@ export default defineComponent({
           name: "ivanscargentino@gmail.com",
           icon: "icon-gmail.svg"
         },
+        { enlace: "https://www.linkedin.com/in/ivan-sca-6b7719221/", 
+          name: "Likedin", 
+          icon: "icon-linkedin.svg" 
+        },
         { enlace: "https://t.me/IvanScaglioni", 
           name: "t.me/IvanScaglioni", 
           icon: "icon-telegram.svg"
@@ -31,11 +37,8 @@ export default defineComponent({
         { enlace: "https://github.com/ivanScaglioni" ,  
           name: "ivanScaglioni", 
           icon: "icon-github.svg"
-        },
-        { enlace: "https://www.linkedin.com/in/ivan-sca-6b7719221/", 
-          name: "Likedin", 
-          icon: "icon-linkedin.svg" 
         }
+
       ],
       index: 0,
     };
@@ -45,7 +48,7 @@ export default defineComponent({
   },
   mounted(){
 
-    const containerLinks = document.getElementById('links') as HTMLElement;
+    const containerLinks = document.getElementById('contactme') as HTMLElement;
     var flag = true;
     for (let index = 0; index < this.arrLinks.length; index++) {
       const contactDiv = document.createElement('div');
@@ -60,20 +63,15 @@ export default defineComponent({
       contactA.setAttribute('target','_blank')
       contactA.innerHTML = this.arrLinks[index].name
 
-      if(flag){
+  
         contactDiv.appendChild(contactImg);
         contactDiv.appendChild(contactA);
-        contactDiv.style.justifyContent= 'flex-start';
+        
 
-      }else{
-        contactDiv.appendChild(contactA);
-        contactDiv.appendChild(contactImg);
-        contactDiv.style.justifyContent= 'flex-end';
-
-      }
+   
 
       containerLinks.appendChild(contactDiv);
-      flag = !flag;
+
 
       
     }
@@ -95,28 +93,41 @@ export default defineComponent({
 
 .contact{
   display: flex;
+  gap: 20px ;
+  min-width: 300px;
   align-items: center;
-  gap:  10px;
-  border-bottom: 1px solid white;
 
-  padding: 20px;
   
-  font-size: 20px;
+ 
+  
 }
 
-a{
-  color:#c6d4df;
-  text-decoration: none;
+
+
+
+
+#contactme{
+  max-width: 700px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  
+  gap: 20px 20px;
+
 }
 
 #links{
-  /* background: #171a21; */
+
   background-color: var(--contact-color);
   color: var(--text-color-2);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 0 -1px 10px black;
+  box-shadow: 0 -1px 10px rgb(0, 0, 0);
+  padding-bottom: 90px;
+ 
   
   
 }

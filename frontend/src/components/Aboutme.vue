@@ -1,56 +1,67 @@
 <template>
-  <section class="component" id="aboutme">
-    <div class="title">About me</div>
+  <section id="aboutme">
+    <div class="container" id="perfil">
+      <img id="ivanscaglioni" src="/public/img/face.png" alt="" />
 
-    <div class="container perfil" >
-      <img id="ivanscaglioni" src="/public/img/ils.jpg" alt="" />
-
-      <div id="greeting" class="text">
-        <p>
-          Iván Scaglioni <br />
-          21 years old <br />
-          <img src="public/icons/pin.svg" alt="" /> Argentina
-        </p>
+      <div class="intro">
+        <!-- <p class="intro-text" id="hi">Hi!, I am</p> -->
+        <h1 class="name title">IVÁN SCAGLIONI</h1>
+        <div class="ilike intro-text">
+          <div>i like</div>
+          <div class="ano" id="like">{{ like }}</div>
+        </div>
       </div>
     </div>
-    <div @click="moreless()" id="drops">
-      <div class="drop-container">
-        <div class="contenido" >
-           <button id="btninfo">{{btnText}}</button> 
-        </div>
-        <div class="drop drop-up">
-         
-        </div>
-      </div>
-      <div class="drop-container">
-        <div class="contenido" >
-           <img id="iconinfo" src="public/icons/expand.svg" alt="" /> 
-        </div>
-        
-        <div class="drop drop-down">
-          
-          
-        </div>
-      </div>
-      
-      
-      
-      
+
+    <div @click="moreless()">
+      <img id="iconinfo" src="public/icons/expand-2-white.svg" alt="" />
     </div>
+
     <div id="moreinfo" class="text">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid quam in
-      labore sapiente nam voluptatem quisquam et blanditiis recusandae autem
-      impedit, minus nisi tempora eveniet necessitatibus eaque dolorum nemo
-      assumenda corrupti esse est numquam deserunt? Animi excepturi, cumque,
-      quos magni libero recusandae repellat at asperiores ratione laudantium
-      consequuntur quae reprehenderit eos qui unde? Accusamus cumque non officia
-      asperiores aliquam exercitationem omnis, facere quod incidunt maxime
-      reiciendis quae sequi labore alias aperiam cupiditate, pariatur dolores
-      temporibus ratione esse aspernatur nostrum explicabo voluptatum aut?
-      Sapiente atque unde voluptate, officia doloribus dolorem accusantium
-      tempore, blanditiis temporibus dolorum optio architecto fuga quis
-      explicabo ratione!
+      
+        
+        <div>
+          <h2 > About me </h2> 
+          <ul>
+            <p>Name:&nbsp; &nbsp; Iván Scaglioni</p>
+          </ul>
+
+          <ul>
+            <p>Age:&nbsp; &nbsp; 21 years old</p>
+          </ul>
+
+          <ul>
+           <p> Country:&nbsp; &nbsp; Argentina</p>
+          </ul>
+          <ul>
+            <p>Language:&nbsp; &nbsp;Spanish</p>
+          </ul>
+        </div>
+          <div>
+            <ul>
+            <h4>Study:</h4> 
+            <p> 
+              my first steps in programming was at
+              the university of UnCUYO in the career of "bachelor's degree in computer
+              science" (unfinished), there I learned about logic of algorithms, data
+              structures, efficiency of algorithms (annotation O), solve problems,
+              maths. <br>
+              <br>
+              About half a year ago I studied web development on my own. With
+              what I aim to get a job to be able to sustain myself economically and
+              continue with my studies
+            </p>
+            <h4>Where do I aim in web development?</h4>
+            <p>               
+              I'm clearly
+              not a good web designer... but solving problems with all available tools
+              is something I enjoy
+            </p>
+          </ul>
+          </div>
+          
     </div>
+    <div class="separador"></div>
   </section>
 </template>
 
@@ -62,17 +73,17 @@ export default defineComponent({
     return {
       btnFlag: true,
       stun: false,
-      btnText:'Expand'
-
+      arrlike: ["problem solving", "Algorith", "Web Development"],
+      like: "Web Development",
+      show: true,
     };
   },
 
   methods: {
     moreless() {
-      console.log(this.stun);
+
       const moreInfo = document.getElementById("moreinfo") as HTMLElement;
       const iconInfo = document.getElementById("iconinfo") as HTMLImageElement;
-      const arrdrop = document.getElementsByClassName('drop-container')as HTMLCollectionOf<HTMLElement>;
 
       if (!this.stun) {
         this.stun = true;
@@ -82,18 +93,30 @@ export default defineComponent({
         stuntimer;
         if (this.btnFlag) {
           moreInfo.style.animationName = "expandir";
-          this.btnText = 'Compress';
-          iconInfo.src = "public/icons/expandless.svg";
-          arrdrop[1].style.animationName = 'btnexpand';
+          iconInfo.style.animationName = "arrowUp";
+        
         } else {
-          this.btnText= "Expand";
           moreInfo.style.animationName = "contraer";
-          iconInfo.src = "public/icons/expand.svg";
-          arrdrop[1].style.animationName = 'btncompress';
+          iconInfo.style.animationName = "arrowDown";
+
         }
         this.btnFlag = !this.btnFlag;
       }
     },
+  },
+  mounted() {
+    const myspam = document.getElementById("like") as HTMLElement;
+    let liketimer = setInterval(() => {
+      myspam.setAttribute("class", "ani");
+      this.like = this.arrlike[0];
+      let aux = this.arrlike.shift() as string;
+      this.arrlike.push(aux);
+    }, 4000);
+
+    liketimer;
+
+
+
   },
 });
 </script>
@@ -104,119 +127,115 @@ export default defineComponent({
 <style>
 
 
-.perfil{
-  gap: 20px 40px;
-  text-align: center;
-  padding: 50px;
-}
-#drops {
-  filter: contrast(60);
-  opacity: 0.7;
-  
-  background-color:transparent;
-  cursor:pointer;
-  
-  
+#aboutme {
 
-  
-}
-
-.contenido{
-  position: absolute;
-  z-index: 150;
-  color: black;
-}
-
-.drop-container{
-
+  min-height: calc(100vh - 70px);
   display: flex;
-  flex-direction: column;
-  height: 95px;
-  width:95px;
-  background-color:white;
-  align-items: center;
+  justify-content:center;
+  text-align: justify;
+  
+  
+}
+
+
+#perfil {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+
   justify-content: center;
-  border-radius: 50%;
-  
-  
+  align-items: center;
+  max-width: 700px;
+  margin-top: 30px;
 
 }
-.drop{
-  
-  z-index: 20;
-  position: relative;
-  background-color: blue;
-  border-radius: 50%;
-  filter: blur(20px);
-  margin:auto;
-  
-  
+
+
+
+.intro {
+  text-align: center;
 }
 
-.drop-up{
-  width: 90px;
-  height: 90px;
-}
-
-.drop-down{
-  width: 90px;
-  height: 90px;
+.intro-text {
+  padding: 0;
+  margin: 0;
 }
 
 
-.drop-container:nth-child(2){
-  animation-fill-mode: forwards;
+
+.name {
+  font-family: "Righteous", cursive;
+  padding: 0;
+  margin: 0;
+  animation-name: rightLeft;
   animation-duration: 2s;
-  z-index: -10;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  transform: translate(0, -45px);
 
-  
-  
 }
-.drop-container:nth-child(1){
-  z-index: 1;
-  border-bottom-right-radius:0 ;
-  border-bottom-left-radius:0 ;
+
+
+.ilike {
+  display: flex;
+  gap: 0px 10px;
+  animation-name: leftRight;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
 }
+
 
 
 #ivanscaglioni {
   width: 100%;
   max-width: 300px;
-  height: 300px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 16px;
+  animation-name: appear;
+  animation-duration: 4s;
+  margin-bottom:20px;
+  margin-top: 40px;
+  box-shadow: 0px 0px 5px black;
 }
 
-#btninfo{
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color:white;
-  font-size: 20px;
-  text-shadow: 0 1px black;
-  
-  
-  
+#iconinfo {
+  width: 40px;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  animation-name: appear;
+  animation-duration: 2s;
 }
+
 #moreinfo {
-  height: 0;
+  height: 0;  
+  
   overflow: hidden;
-  max-width: 700px;
+  max-width: 800px;
+  width: 90%;
+ 
   background-color: transparent;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
 
+
+.ani {
+  animation-name: animalike;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.ano {
+  animation-name: animalike;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
 @keyframes contraer {
   from {
-    height: 700px;
+    height: 810px;
   }
   to {
     height: 0;
+    
   }
 }
 
@@ -225,26 +244,96 @@ export default defineComponent({
     height: 0;
   }
   to {
-    height: 700px;
+    height: 810px;
+    
   }
 }
 
-@keyframes btnexpand {
-  0%{
-    transform: translate(0, -45px);
+@keyframes arrowUp {
+  0% {
+    transform: rotate(0);
   }
-  100%{
-    transform: translate(0, 0px);
+
+  100% {
+    transform: rotate(180deg);
   }
 }
 
-@keyframes btncompress {
-  0%{
-    transform: translate(0, 0px);
+@keyframes arrowDown {
+  0% {
+    transform: rotate(180deg);
   }
-  100%{
-    transform: translate(0, -45px);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
+@keyframes animalike {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes rightLeft {
+  0% {
+    opacity: 0;
+    transform: translate(30px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    opacity: 0;
+    transform: translate(-30px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes downUp {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
 </style>

@@ -4,18 +4,39 @@
   <main>
     
     
+    <div class="component uno">
+      <Menu/>
+    </div>
+
+
+
+
+    <div class="component">
+      <Aboutme/>
+    </div>
     
-    <Aboutme/>
   
 
+        
+    <div class="component">
+      <Skills/>
+    </div>
     
   
-    <Skills/>
+    
 
-  
+      
+    <div class="component">
+      <Links/>
+    </div>
+    
 
 
-    <Links/>
+    
+
+    
+    
+    
 
 
   </main>
@@ -38,6 +59,9 @@ const Aboutme = markRaw(
 const Skills = markRaw(
   defineAsyncComponent(() => import("../components/Skills.vue"))
 ) as Component;
+const Menu = markRaw(
+  defineAsyncComponent(() => import("../components/Menu.vue"))
+) as Component;
 
 export default defineComponent({
   data(){
@@ -47,10 +71,14 @@ export default defineComponent({
     }
 
   },
+  methods:{
+
+  },
   components:{
     Skills,
     Aboutme,
-    Links
+    Links,
+    Menu
  
   }
 });
@@ -61,40 +89,48 @@ export default defineComponent({
 <style>
 
 
-main{
-  width: 100%;
-}
 
 
-.component{
-  width: 100%;
-  text-align: center;
-  margin: auto;
-  
-  
-}
-
-/* background-color: #171a21 */
-
-.title{
-
-
-  width: max-content;
-  padding: 20px;
-  padding-bottom: 0;
- 
-  margin: auto;
-  font-size: 100px;
-}
-
-
-/* .contact{
-
+.container{
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   justify-content: center;
   align-items: center;
+ 
 
-} */
+}
+.uno{
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  width: 100%;
+  
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+main{
+  width: 100%;
+  
+}
+a{
+  width: 100%;
+  color:#c6d4df;
+  text-decoration: none;
+
+ 
+
+}
+h2{
+  padding: 0;
+  margin: 0;
+}
 
 
 </style>

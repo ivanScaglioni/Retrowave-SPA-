@@ -1,9 +1,9 @@
 <template>
-  <section class="component" id="skills">
+  <section  id="skills">
 
-    <div class="separador"></div>
+    
     <div class="title" id="skills-title">
-      Skills 
+      <h1>  Skills  </h1> 
     </div>
     <div class="tabs section">
       <button id="btn-skill" class="btn-skill" @click="see('skill')">all</button>
@@ -19,7 +19,6 @@
 
 <script lang="ts">
 "use strict";
-
 
 import { defineComponent } from "vue";
 
@@ -97,7 +96,7 @@ export default defineComponent({
       const arr = Array.from(skills, (skill) => skill.className);
       for (let index = 0; index < arr.length; index++) {
         if (arr[index].includes(seeSkill)) {
-          skills[index].style.display = "block";
+          skills[index].style.display = "flex";
         } else {
           skills[index].style.display = "none";
         }
@@ -113,11 +112,11 @@ export default defineComponent({
     for (let index = 0; index < this.arrSkills.length; index++) {
       const skilldiv = document.createElement("div");
       const skillicon = document.createElement("img");
-      const skillname = document.createElement("p");
+      const skillname = document.createElement("div");
 
 
 
-      
+
       skillicon.src = this.rute + this.arrSkills[index].nameIcon;
       skillicon.setAttribute('class','skillicon')
       skillname.innerHTML = this.arrSkills[index].name;
@@ -141,45 +140,50 @@ export default defineComponent({
 
 
 .skill{
-  display: flex;
+  display:flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.363);
+  border-radius: 5%;
   width: 150px;
+  padding: 10px;
   
+}
 
-  
+#skills{
+  padding-top: 90px;
 }
 
 .skillicon{
-  width: 70px;
+  width: 90px;
   
+  margin: 0;
 
   
-}
-#celtic{
-  width: 700px;
-
 }
 
 .separador{
   width: 90%;
   border-top: 1px solid var(--text-color);
-
+  animation-name: downUp ;
+  
+  animation-duration: 2s;
+  
 }
 
 #conte {
+  display: flex;
+  width: 100%;
   max-width: 700px;
-  
+  min-height: 500px;
   justify-content: space-around;
-  gap: 60px 10px;
+  gap: 80px 30px;
   align-items: baseline;
+  align-items: center;
   padding-bottom: 70px;
-  /* background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.774) 5%,
-    rgba(255, 255, 255, 0) 70%
-  ); */
-  
+  padding-top: 70px;
+
 }
 
 .btn-skill{
@@ -188,19 +192,12 @@ export default defineComponent({
   outline: none;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  text-shadow: -1px -1px rgb(0 0 0 / 25%);
-  padding: 10px;
-  font-size: 20px;
+  
+  padding-right: 12px;
+  padding-left: 12px;
+
   color: var(--text-color);
 }
-
-/* img{
-  min-width: 70px;
-  max-width: 100px;
-  width: 20vw;
-  object-fit: cover;
-
-} */
 
 
 
@@ -220,16 +217,9 @@ export default defineComponent({
   align-items: center;
 }
 
-#skill{
-  width: 100vw;
-}
 
-/* button {
-  background-color: transparent;
-  border: none;
-  color: lightblue;
-  font-size: 30px;
-} */
+
+
 
 
 
