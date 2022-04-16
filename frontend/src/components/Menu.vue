@@ -5,7 +5,7 @@
         <div id="name-nav">
           IVAN SCAGLIONI
         </div>
-        <div class="nav-menu">
+        <div id="nav-options">
 
 
           <div id="a-menu">
@@ -111,8 +111,8 @@ export default defineComponent({
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px;
+  justify-content: space-around;
+  
   min-height: 70px;
   padding-top: 0;
   padding-bottom: 0;
@@ -121,15 +121,12 @@ export default defineComponent({
 
 
 
-.nav-menu{
+#nav-options{
   display: flex;
   gap: 10px 50px;
   align-items: center;
 }
 
-#name-nav{
-  font-family: "Densmore", sans-serif;
-}
 
 
 #a-menu{

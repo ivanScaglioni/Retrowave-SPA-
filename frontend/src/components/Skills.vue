@@ -27,7 +27,7 @@ export default defineComponent({
     return {
       currentTap: "skill",
 
-      rute: "public/icons/",
+      rute: "./public/icons/",
 
       arrSkills: [
         {
@@ -157,17 +157,14 @@ export default defineComponent({
 
 .skillicon{
   width: 90px;
-  
   margin: 0;
 
-  
 }
 
 .separador{
   width: 90%;
   border-top: 1px solid var(--text-color);
   animation-name: downUp ;
-  
   animation-duration: 2s;
   
 }

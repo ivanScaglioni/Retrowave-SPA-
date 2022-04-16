@@ -16,7 +16,7 @@ export default defineComponent({
   data() {
     return {
 
-      contactSrc:'../../public/icons/',
+      contactSrc:'./public/icons/',
 
 
       arrLinks: [
@@ -85,6 +85,11 @@ export default defineComponent({
 
 <style>
 
+
+#contact-title{
+  padding-bottom: 30px ;
+  padding-top: 30px ;
+}
 .contacticon{
   width: 50px;
 

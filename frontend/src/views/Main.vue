@@ -64,16 +64,7 @@ const Menu = markRaw(
 ) as Component;
 
 export default defineComponent({
-  data(){
 
-    return{  
-      
-    }
-
-  },
-  methods:{
-
-  },
   components:{
     Skills,
     Aboutme,

@@ -3,7 +3,6 @@ const  common = require("./webpack.common");
 
 const devConfig = {
     mode: "production",
-
 };
 
 

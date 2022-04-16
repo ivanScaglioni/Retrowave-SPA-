@@ -1,7 +1,7 @@
 <template>
   <section id="aboutme">
     <div class="container" id="perfil">
-      <img id="ivanscaglioni" src="/public/img/face.png" alt="" />
+      <img id="ivanscaglioni" src="public/img/face.png" alt="" />
 
       <div class="intro">
         <!-- <p class="intro-text" id="hi">Hi!, I am</p> -->
@@ -73,7 +73,7 @@ export default defineComponent({
     return {
       btnFlag: true,
       stun: false,
-      arrlike: ["problem solving", "Algorith", "Web Development"],
+      arrlike: ["Aroblem solving", "Algorithm", "Web Development"],
       like: "Web Development",
       show: true,
     };

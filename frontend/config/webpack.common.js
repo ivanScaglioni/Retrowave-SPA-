@@ -9,12 +9,14 @@ module.exports = {
     
     
     output:{
+
         path: path.resolve(__dirname, '../dist'),
         filename:'bundle.js',
         
     },
     module:{
         rules:[
+
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
@@ -22,6 +24,7 @@ module.exports = {
                     appendTsSuffixTo: [/\.vue$/],
                 }
             },
+
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -30,19 +33,32 @@ module.exports = {
                 test: /\.css$/,
                 use:[
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
-                    // 'vue-style-loader',
-                    // {
-                    //     loader:'css-loader',
-                    //     options: {importLoaders:1}
-                    // },
-                    // 'postcss-loader'
-                ]
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ],
+                
+
+            },
+            {
+                test: /\.html$/i,
+                use:[
+                    
+                    'html-loader',
+
+                ],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'file-loader',
                 type: 'asset',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
             },
             {
                 test: /\.mp3$/,
@@ -55,11 +71,15 @@ module.exports = {
         extensions:['.ts','.js','.css','.vue']
     },
     plugins:[
+        new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template:'./src/index.html',
+            minify:true
         }),
-        new MiniCssExtractPlugin(),
-        new VueLoaderPlugin()
+        new MiniCssExtractPlugin(
+            { filename: '[name].css' }
+        )
+        
         
     ]
 }

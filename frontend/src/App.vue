@@ -1,18 +1,21 @@
 <template>
 
     
-  <router-view/>
+  <Main/>
 
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { Component, defineComponent, defineAsyncComponent, markRaw } from "vue";
 
-
-
+const Main= markRaw(
+  defineAsyncComponent(() => import("./views/Main.vue"))
+) as Component;
 export default defineComponent({
-  name: "App",
-  
+  name: "app",
+  components:{
+    Main
+  }
 
 
 });
@@ -71,6 +74,210 @@ body {
    /* text-shadow: -1px -1px rgb(0 0 0 / 70%); */
 }
 
+
+
+@media all and (max-width: 1280px) {
+ 
+
+
+
+    /* ----------NAV---------- */
+    #responsive-menu{
+        height: 160vh !important;
+
+    }
+
+    #nav-options{
+        gap: 10px 0px !important ;
+    }
+
+    #menu-header{
+        min-height: 50px;
+    }
+
+    #menu{
+        max-height: 50px ;
+    }
+
+    #aboutme{
+        min-height: calc(100vh - 50px) !important;
+    }
+    #a-menu{
+        display: none !important;
+    }
+
+    #btn-responsive{
+        display: flex !important;
+    }
+
+
+    /* ------------ ABOUT ME------------- */
+    @keyframes contraer {
+        from {
+          height: 660px;
+        }
+        to {
+          height: 0;
+          
+        }
+    }
+      
+    @keyframes expandir {
+        from {
+          height: 0;
+        }
+        to {
+          height: 660px;
+          
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    body{
+        font-size: var(--text-size-medium);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-medium);
+    }
+
+    .title{
+        font-size: var(--title-size-m);
+    }
+    
+
+}
+
+@media all and (min-width: 1280px) {
+
+
+    body{
+        font-size: var(--text-size-large);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-medium);
+    }
+
+    .title{
+        font-size: var(--title-size-l);
+    }
+
+    #a-menu{
+        font-size: var(--text-size-medium);
+    }
+     #responsive-menu{
+        display: none  !important;
+
+    }
+
+}
+
+@media all and (max-width: 600px) {
+        /* ------------ ABOUT ME------------- */
+        @keyframes contraer {
+            from {
+              height: 620px;
+            }
+            to {
+              height: 0;
+              
+            }
+        }
+          
+        @keyframes expandir {
+            from {
+              height: 0;
+            }
+            to {
+              height: 620px;
+              
+            }
+        }
+
+
+    body{
+        font-size: var(--text-size-small);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-small);
+    }
+
+    .title{
+        font-size: var(--title-size-m);
+    }
+    .skill{
+        width: auto;
+    }
+    #conte {
+        gap: 20px 10px;
+        min-height: 200px;
+        padding-top: 30px;
+    }
+    .skillicon{
+        width: 70px;
+        margin: 0;
+      
+    }
+}
+
+@media all and (max-width: 400px) {
+
+/* 
+    ------------ ABOUT ME------------- */
+    @keyframes contraer {
+        from {
+        height: 720px;
+        }
+        to {
+        height: 0;
+        
+        }
+    }
+    
+    @keyframes expandir {
+        from {
+        height: 0;
+        }
+        to {
+        height: 720px;
+        
+        }
+    }
+    
+
+    ul{
+        padding: 0;
+    }
+    body{
+        font-size: var(--text-size-small);
+    }
+
+    .btn-skill{
+        font-size: var(--text-size-medium);
+    }
+
+    .title{
+        font-size: var(--title-size-s);
+    }
+
+    .contact{
+        min-width: auto;
+    }
+    #contactme{
+        width: 100%;
+    }
+
+
+
+}
 
 
 

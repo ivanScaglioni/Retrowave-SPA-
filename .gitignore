@@ -1,4 +1,5 @@
 backend/node_modules
 frontend/node_modules
 note.txt
-ignorateesta
+frontend/dist
+.gitignore
