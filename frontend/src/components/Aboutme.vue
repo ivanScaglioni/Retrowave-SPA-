@@ -73,7 +73,7 @@ export default defineComponent({
     return {
       btnFlag: true,
       stun: false,
-      arrlike: ["Aroblem solving", "Algorithm", "Web Development"],
+      arrlike: ["Problem solving", "Algorithm", "Web Development"],
       like: "Web Development",
       show: true,
     };
