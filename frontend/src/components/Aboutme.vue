@@ -146,7 +146,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   max-width: 700px;
-  margin-top: 30px;
+  margin-top: 10px;
 
 }
 
@@ -185,9 +185,10 @@ export default defineComponent({
 
 #ivanscaglioni {
   width: 100%;
+  max-height: 300px;
   max-width: 300px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 50%;
   animation-name: appear;
   animation-duration: 4s;
   margin-bottom:20px;

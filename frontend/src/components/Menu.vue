@@ -2,10 +2,15 @@
     <section id="nav-bar">
       
       <div  id="nav-header" >
-        <div id="name-nav">
-          IVAN SCAGLIONI
-        </div>
+
+          <div id="name-nav">
+            IVAN SCAGLIONI
+          </div>
+
         <div id="nav-options">
+
+          
+
 
 
           <div id="a-menu">
@@ -14,14 +19,27 @@
             <a href="#links">Contact</a>
           </div>
 
+          <button @click="mode()" id="btn-theme" class="btn-menu">
+           <img id="icon-theme" class="icon-menu" src="public/icons/moon4.svg" alt="theme mode" />
+          </button>
+            
           <div @click="handleMenu(flagMenu)" id="btn-responsive" class="btn-menu">
             <img id="icon-responsive" class="icon-menu" src="public/icons/menu.svg" alt="">
-          </div>
+          </div> 
 
-          <button @click="mode()" id="btn-theme" class="btn-menu">
-            <img id="icon-theme" class="icon-menu" src="public/icons/moon4.svg" alt="theme mode" />
-          </button>
         </div>
+        
+        
+ 
+
+
+
+          
+
+
+
+
+
       </div>
       <div id="responsive-menu">
           <div  @click="handleMenu(false)" class="glass">
@@ -95,14 +113,14 @@ export default defineComponent({
 
 #nav-bar{
   
-  box-shadow: 0 1px 10px rgb(0, 0, 0);
+  box-shadow: 0 4px 5px rgb(0, 0, 0);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   max-height: 70px;
   background-color: var(--contact-color);
   color: var(--text-color-2);
-  
+  z-index: 1;
   
 }
 
@@ -111,8 +129,8 @@ export default defineComponent({
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  
+  justify-content: space-between;
+  padding: 20px;
   min-height: 70px;
   padding-top: 0;
   padding-bottom: 0;
@@ -159,6 +177,8 @@ export default defineComponent({
   font-family: 'Julius Sans One', sans-serif;
   padding-top: 10px;
   gap: 30px 0px;
+  box-shadow: -3px 4px 5px rgb(0, 0, 0);
+  z-index: -1;
 }
 
 

@@ -99,12 +99,10 @@ export default defineComponent({
 .contact{
   display: flex;
   gap: 20px ;
-  min-width: 300px;
+  min-width: 100%;
   align-items: center;
+  padding-bottom: 20px;
 
-  
- 
-  
 }
 
 
@@ -112,15 +110,12 @@ export default defineComponent({
 
 
 #contactme{
-  max-width: 700px;
-  width: 70%;
+  
+  
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  
-  
-  gap: 20px 20px;
+
 
 }
 

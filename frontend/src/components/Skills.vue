@@ -148,12 +148,14 @@ export default defineComponent({
   border-radius: 5%;
   width: 150px;
   padding: 10px;
+  transition-duration: 1s;
   
 }
 
-#skills{
-  padding-top: 90px;
+.skill:hover{
+  transform: scale(1.2);
 }
+
 
 .skillicon{
   width: 90px;
@@ -187,13 +189,15 @@ export default defineComponent({
   border: none;
   background: transparent;
   outline: none;
+
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  
+  padding: 5px;
   padding-right: 12px;
   padding-left: 12px;
 
   color: var(--text-color);
+  
 }
 
 
