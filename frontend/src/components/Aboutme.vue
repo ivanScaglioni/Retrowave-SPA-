@@ -18,48 +18,56 @@
     </div>
 
     <div id="moreinfo" class="text">
-      
-        
-        <div>
-          <h2 > About me </h2> 
-          <ul>
-            <p>Name:&nbsp; &nbsp; Iván Scaglioni</p>
-          </ul>
+      <div>
+        <h2>ABOUT ME</h2>
+        <ul>
+          <p>Name:&nbsp; &nbsp; Iván Scaglioni</p>
+        </ul>
+
+        <ul>
+          <p>Age:&nbsp; &nbsp; 21 years old</p>
+        </ul>
+
+        <ul>
+          <p>Country:&nbsp; &nbsp; Argentina</p>
+        </ul>
+        <ul>
+          <p>Language:&nbsp; &nbsp;Spanish</p>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><h4>STUDY</h4></li>
+
+          <p>
+            My first steps in programming was at the university of UnCUYO in the
+            career of "bachelor's degree in computer science" (unfinished),
+            there I learned about logic of algorithms, data structures,
+            efficiency of algorithms (annotation O), solve problems, maths.
+            <br />
+            <br />
+            I like to learn in a self-taught way by reading documentation,
+            watching videos, taking courses, asking in forums
+          </p>
+          <li><h4>WHAT AM I INTERESTED IN?</h4></li>
 
           <ul>
-            <p>Age:&nbsp; &nbsp; 21 years old</p>
-          </ul>
-
-          <ul>
-           <p> Country:&nbsp; &nbsp; Argentina</p>
+            Back-end
           </ul>
           <ul>
-            <p>Language:&nbsp; &nbsp;Spanish</p>
+            Software development
           </ul>
-        </div>
-          <div>
-            <ul>
-            <h4>Study:</h4> 
-            <p> 
-              my first steps in programming was at
-              the university of UnCUYO in the career of "bachelor's degree in computer
-              science" (unfinished), there I learned about logic of algorithms, data
-              structures, efficiency of algorithms (annotation O), solve problems,
-              maths. <br>
-              <br>
-              About half a year ago I studied web development on my own. With
-              what I aim to get a job to be able to sustain myself economically and
-              continue with my studies
-            </p>
-            <h4>Where do I aim in web development?</h4>
-            <p>               
-              I'm clearly
-              not a good web designer... but solving problems with all available tools
-              is something I enjoy
-            </p>
+          <ul>
+            Artificial intelligence
           </ul>
-          </div>
-          
+          <ul>
+            Game development
+          </ul>
+          <ul>
+            Problem solving
+          </ul>
+        </ul>
+      </div>
     </div>
     <div class="separador"></div>
   </section>
@@ -81,7 +89,6 @@ export default defineComponent({
 
   methods: {
     moreless() {
-
       const moreInfo = document.getElementById("moreinfo") as HTMLElement;
       const iconInfo = document.getElementById("iconinfo") as HTMLImageElement;
 
@@ -94,11 +101,9 @@ export default defineComponent({
         if (this.btnFlag) {
           moreInfo.style.animationName = "expandir";
           iconInfo.style.animationName = "arrowUp";
-        
         } else {
           moreInfo.style.animationName = "contraer";
           iconInfo.style.animationName = "arrowDown";
-
         }
         this.btnFlag = !this.btnFlag;
       }
@@ -114,9 +119,6 @@ export default defineComponent({
     }, 4000);
 
     liketimer;
-
-
-
   },
 });
 </script>
@@ -125,18 +127,12 @@ export default defineComponent({
 
 
 <style>
-
-
 #aboutme {
-
   min-height: calc(100vh - 70px);
   display: flex;
-  justify-content:center;
+  justify-content: center;
   text-align: justify;
-  
-  
 }
-
 
 #perfil {
   display: flex;
@@ -147,10 +143,7 @@ export default defineComponent({
   align-items: center;
   max-width: 700px;
   margin-top: 10px;
-
 }
-
-
 
 .intro {
   text-align: center;
@@ -161,17 +154,13 @@ export default defineComponent({
   margin: 0;
 }
 
-
-
 .name {
   font-family: "Righteous", cursive;
   padding: 0;
   margin: 0;
   animation-name: rightLeft;
   animation-duration: 2s;
-
 }
-
 
 .ilike {
   display: flex;
@@ -181,8 +170,6 @@ export default defineComponent({
   animation-timing-function: ease-in;
 }
 
-
-
 #ivanscaglioni {
   width: 100%;
   max-height: 300px;
@@ -191,7 +178,7 @@ export default defineComponent({
   border-radius: 50%;
   animation-name: appear;
   animation-duration: 4s;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   margin-top: 40px;
   box-shadow: 0px 0px 5px black;
 }
@@ -206,18 +193,17 @@ export default defineComponent({
 }
 
 #moreinfo {
-  height: 0;  
-  
+  height: 0;
+
   overflow: hidden;
   max-width: 800px;
   width: 90%;
- 
+
   background-color: transparent;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
-
 
 .ani {
   animation-name: animalike;
@@ -232,11 +218,10 @@ export default defineComponent({
 
 @keyframes contraer {
   from {
-    height: 810px;
+    height: 840px;
   }
   to {
     height: 0;
-    
   }
 }
 
@@ -245,8 +230,7 @@ export default defineComponent({
     height: 0;
   }
   to {
-    height: 810px;
-    
+    height: 840px;
   }
 }
 

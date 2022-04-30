@@ -161,7 +161,7 @@ export default defineComponent({
   display: grid;
   width: 100vw;
   height: calc(100vh - 90px);
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 200px;
   visibility: hidden;
 
 }
@@ -170,17 +170,29 @@ export default defineComponent({
 .a-responsive{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 50px;
-  width:auto;
   background-color: var(--contact-color);
   font-family: 'Julius Sans One', sans-serif;
-  padding-top: 10px;
-  gap: 30px 0px;
+  gap:10px 0px ;
   box-shadow: -3px 4px 5px rgb(0, 0, 0);
   z-index: -1;
+  text-align: center;
+
 }
 
+a{
+  padding: 10px;
+  width: auto;
+  height: auto;
+}
+a:hover{
+  
+  border-bottom: 1px solid white;
+  
+}
+
+.glass{
+  background-color: #00000049;
+}
 
 #btn-responsive{
   display: none;
