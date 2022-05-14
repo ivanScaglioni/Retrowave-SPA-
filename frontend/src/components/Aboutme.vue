@@ -1,19 +1,22 @@
 <template>
   <section id="aboutme">
     <div class="container" id="perfil">
-      <img id="ivanscaglioni" src="public/img/face.png" alt="" />
+<!-- 
+        <div id="ivanscaglioni">
+
+        </div> -->
 
       <div class="intro">
         <!-- <p class="intro-text" id="hi">Hi!, I am</p> -->
-        <h1 class="name title">IVÁN SCAGLIONI</h1>
-        <div class="ilike intro-text">
-          <div>i like</div>
-          <div class="ano" id="like">{{ like }}</div>
+        <h1 class="name title">IVAN SCAGLIONI</h1>
+        <div class="ilike">
+          <div class="ilike" >Web Developer</div>
+
         </div>
       </div>
     </div>
 
-    <div @click="moreless()">
+    <div class="iconinfo_container" @click="moreless()">
       <img id="iconinfo" src="public/icons/expand-2-white.svg" alt="" />
     </div>
 
@@ -81,8 +84,7 @@ export default defineComponent({
     return {
       btnFlag: true,
       stun: false,
-      arrlike: ["Problem solving", "Algorithm", "Web Development"],
-      like: "Web Development",
+
       show: true,
     };
   },
@@ -109,17 +111,7 @@ export default defineComponent({
       }
     },
   },
-  mounted() {
-    const myspam = document.getElementById("like") as HTMLElement;
-    let liketimer = setInterval(() => {
-      myspam.setAttribute("class", "ani");
-      this.like = this.arrlike[0];
-      let aux = this.arrlike.shift() as string;
-      this.arrlike.push(aux);
-    }, 4000);
-
-    liketimer;
-  },
+  
 });
 </script>
 
@@ -128,21 +120,22 @@ export default defineComponent({
 
 <style>
 #aboutme {
-  min-height: calc(100vh - 70px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   text-align: justify;
+    text-shadow:0 0 1vw #1041FF;
+  color: #c9f4f9 ;
 }
 
 #perfil {
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
-
-  justify-content: center;
-  align-items: center;
+  /* transform: rotate(-20deg); */
   max-width: 700px;
   margin-top: 10px;
+  
 }
 
 .intro {
@@ -155,32 +148,61 @@ export default defineComponent({
 }
 
 .name {
-  font-family: "Righteous", cursive;
+  
   padding: 0;
   margin: 0;
   animation-name: rightLeft;
   animation-duration: 2s;
+  
 }
 
 .ilike {
+  font-family:'Atomic Age', cursive;
   display: flex;
   gap: 0px 10px;
   animation-name: leftRight;
   animation-duration: 2s;
   animation-timing-function: ease-in;
+  text-shadow:0 0 1vw #f700ff;
+  color: #f6c9f9 ;
+}
+
+#like{
+  font-family:'Atomic Age', cursive;
 }
 
 #ivanscaglioni {
-  width: 100%;
-  max-height: 300px;
-  max-width: 300px;
-  object-fit: cover;
+
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
   animation-name: appear;
   animation-duration: 4s;
-  margin-bottom: 20px;
-  margin-top: 40px;
-  box-shadow: 0px 0px 5px black;
+
+/*   
+  border: 2px solid white; */
+  background-image: url(../../public/img/ils5.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 310px;
+  
+  /* box-shadow:
+    inset 0 0 20px rgb(3, 184, 255),    
+
+    0 0 2px #fff,           
+    0px 0 80px rgb(0, 187, 255);     
+ */
+
+  /* background-color: linear-gradient(red, yellow, green); */
+  
+
+}
+
+.iconinfo_container{
+  animation: shake 3s cubic-bezier(1, 1, 1, 1) both;
+
+  animation-iteration-count: infinite;
+  
 }
 
 #iconinfo {
@@ -190,35 +212,52 @@ export default defineComponent({
   cursor: pointer;
   animation-name: appear;
   animation-duration: 2s;
+  filter: drop-shadow(0px 0px 10px rgb(255, 247, 0)) ;
+
+  
 }
 
 #moreinfo {
   height: 0;
-
-  overflow: hidden;
-  max-width: 800px;
+    max-width: 800px;
   width: 90%;
-
-  background-color: transparent;
+  overflow: hidden;
+  font-size: var(--text-size-medium);
+  /* width: 50%; */
+  padding: 5px;
+  text-shadow:0 0 1vw #59ff00;
+  color: #dbf9c9 ;
+  
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
 
-.ani {
-  animation-name: animalike;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+.separador{
+  width: 90%;
+  border-top: 3px solid rgb(206, 213, 255);
+  animation-name: downUp ;
+  animation-duration: 2s;
+  /* box-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE; */
+  box-shadow: 0 0 1vw #ff1010, 0 0 3vw #ff1010, 0 0 10vw #ff1010, 0 0 10vw #ff1010, 0 0 .4vw #fedb8b;
+  
 }
-.ano {
-  animation-name: animalike;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
+
+
+
+@keyframes shake {
+
+  0% {transform: translate3d(0, 14px, 0); }
+
+  
+  50% {  transform: translate3d(0, 0px, 0);}
+
+  100%{transform: translate3d(0, 14px, 0);}
 }
 
 @keyframes contraer {
   from {
-    height: 840px;
+    height: 820px;
   }
   to {
     height: 0;
@@ -230,7 +269,7 @@ export default defineComponent({
     height: 0;
   }
   to {
-    height: 840px;
+    height: 820px;
   }
 }
 
@@ -253,21 +292,6 @@ export default defineComponent({
   }
 }
 
-@keyframes animalike {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-}
 
 @keyframes upDown {
   0% {

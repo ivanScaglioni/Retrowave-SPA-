@@ -12,6 +12,7 @@ module.exports = {
 
         path: path.resolve(__dirname, '../dist'),
         filename:'bundle.js',
+        assetModuleFilename: 'public/img/[hash][ext][query]'
         
     },
     module:{
@@ -24,7 +25,6 @@ module.exports = {
                     appendTsSuffixTo: [/\.vue$/],
                 }
             },
-
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -53,8 +53,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-                loader: 'file-loader',
-                type: 'asset',
+                type: 'asset/resource',
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
