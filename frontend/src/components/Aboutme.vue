@@ -171,7 +171,7 @@ export default defineComponent({
   font-family:'Atomic Age', cursive;
 }
 
-#ivanscaglioni {
+/* #ivanscaglioni {
 
   height: 300px;
   width: 300px;
@@ -179,24 +179,15 @@ export default defineComponent({
   animation-name: appear;
   animation-duration: 4s;
 
-/*   
-  border: 2px solid white; */
+  
+  border: 2px solid white;
   background-image: url(../../public/img/ils5.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 310px;
   
-  /* box-shadow:
-    inset 0 0 20px rgb(3, 184, 255),    
 
-    0 0 2px #fff,           
-    0px 0 80px rgb(0, 187, 255);     
- */
-
-  /* background-color: linear-gradient(red, yellow, green); */
-  
-
-}
+} */
 
 .iconinfo_container{
   animation: shake 3s cubic-bezier(1, 1, 1, 1) both;
