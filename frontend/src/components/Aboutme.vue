@@ -1,18 +1,15 @@
 <template>
   <section id="aboutme">
     <div class="container" id="perfil">
-<!-- 
-        <div id="ivanscaglioni">
 
-        </div> -->
 
       <div class="intro">
-        <!-- <p class="intro-text" id="hi">Hi!, I am</p> -->
+        
         <h1 class="name title">IVAN SCAGLIONI</h1>
-        <div class="ilike">
-          <div class="ilike" >Web Developer</div>
 
-        </div>
+        <div class="ilike" >Web Developer</div>
+
+
       </div>
     </div>
 
@@ -120,32 +117,23 @@ export default defineComponent({
 
 <style>
 #aboutme {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   text-align: justify;
-    text-shadow:0 0 1vw #1041FF;
-  color: #c9f4f9 ;
+  
+ 
 }
 
 #perfil {
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
-  /* transform: rotate(-20deg); */
   max-width: 700px;
   margin-top: 10px;
   
 }
 
-.intro {
-  text-align: center;
-}
-
-.intro-text {
-  padding: 0;
-  margin: 0;
-}
 
 .name {
   
@@ -153,7 +141,8 @@ export default defineComponent({
   margin: 0;
   animation-name: rightLeft;
   animation-duration: 2s;
-  
+  text-shadow:  0 0 1vw #106cff, 0 0 3vw #106cff, 0 0 10vw #106cff, 0 0 10vw #106cff, 0 0 .4vw #7faffe;
+   color: #e6f4ff ;
 }
 
 .ilike {
@@ -165,29 +154,18 @@ export default defineComponent({
   animation-timing-function: ease-in;
   text-shadow:0 0 1vw #f700ff;
   color: #f6c9f9 ;
+  font-style: oblique;  
+  justify-content: flex-end;
+  
+
+
 }
 
 #like{
   font-family:'Atomic Age', cursive;
 }
 
-/* #ivanscaglioni {
 
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  animation-name: appear;
-  animation-duration: 4s;
-
-  
-  border: 2px solid white;
-  background-image: url(../../public/img/ils5.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 310px;
-  
-
-} */
 
 .iconinfo_container{
   animation: shake 3s cubic-bezier(1, 1, 1, 1) both;
@@ -210,18 +188,16 @@ export default defineComponent({
 
 #moreinfo {
   height: 0;
-    max-width: 800px;
+  max-width: 800px;
   width: 90%;
   overflow: hidden;
-  font-size: var(--text-size-medium);
-  /* width: 50%; */
-  padding: 5px;
-  text-shadow:0 0 1vw #59ff00;
-  color: #dbf9c9 ;
   
+  color: #f7fff2 ;
+  font-weight: bold;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
+  background-color: #33005295;
 }
 
 .separador{
@@ -248,7 +224,7 @@ export default defineComponent({
 
 @keyframes contraer {
   from {
-    height: 820px;
+    height: 700px;
   }
   to {
     height: 0;
@@ -260,7 +236,7 @@ export default defineComponent({
     height: 0;
   }
   to {
-    height: 820px;
+    height: 700px;
   }
 }
 

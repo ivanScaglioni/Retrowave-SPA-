@@ -119,14 +119,21 @@ export default defineComponent({
   
   justify-content: flex-start;
   align-items: center;
-  filter: blur(1px);
+  
+  filter: brightness(1.5) blur(0.1px);
 
+  box-shadow: 
+  0 0 1vw #8c10ff
+  , 0 0 3vw #8c10ff, 
+  0 0 10vw #8c10ff
+  ;
+  
   background: linear-gradient(
     180deg,
     rgba(255, 188, 0, 1) 0%,
     rgba(255, 117, 0, 1) 36%,
-    rgba(255, 0, 0, 1) 70%,
-    rgba(255, 0, 0, 0.527) 100%
+    rgb(255, 68, 0) 70%,
+    rgb(169, 0, 0) 100%
   );
   overflow: hidden;
 }

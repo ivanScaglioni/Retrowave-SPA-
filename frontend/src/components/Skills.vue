@@ -2,26 +2,24 @@
   <section  id="skills">
     
     
-    <div class="title" id="skills-title">
-      <h1>  Skills  </h1> 
-      
-    </div>
+    
+    <div class="title" id="t-skills">  Skills  </div> 
 
     <div class="tabs section">
       <button id="btn-skill" class="btn-skill diamond" @click="see('skill')">
-        <div class="btn">all</div> 
+        all
       </button>
       <button id="btn-frontend" class="btn-skill" @click="see('frontend')">
-        <div class="btn">front_end</div>
+        front-end
       </button>
       <button id="btn-backend" class="btn-skill" @click="see('backend')">
-        <div class="btn">back_end</div> 
+        back-end
       </button>
     </div>
 
-    <div id="skills-container">
+ 
       <div class="container" id="conte"></div>
-    </div>
+
   </section>
 </template>
 
@@ -113,7 +111,7 @@ export default defineComponent({
   },
 
   mounted() {
-    const tab = document.getElementById("btn-skill") as HTMLElement;
+    
     
     const contenedor = document.getElementById("conte") as HTMLElement;
 
@@ -147,10 +145,19 @@ export default defineComponent({
 <style>
 
 #skills{
-    text-shadow:0 0 1vw #ff0000;
+  
   color: #ffe2e2 ;
+  font-weight: bold;
+  
 }
 
+#t-skills{
+  font-size: 70px;
+  font-style: oblique;
+  /* font-family:'Courier New', cursive; */
+  padding-bottom: 30px;
+  text-shadow:  0 0 1vw #ff1010, 0 0 3vw #ff1010, 0 0 10vw #ff1010, 0 0 10vw #ff1010, 0 0 .4vw rgb(254, 127, 127);
+}
 .skill{
   display:flex;
   flex-direction: column;
@@ -161,8 +168,11 @@ export default defineComponent({
   width: 150px;
   padding: 10px;
   transition-duration: 1s;
+  /* text-shadow:  0 0 1vw #106cff, 0 0 3vw #106cff, 0 0 10vw #106cff, 0 0 10vw #106cff, 0 0 .4vw #7faffe;
+  color: #e2fcff ; */
 
-  
+  filter: drop-shadow(2px 2px 0px rgb(140, 0, 255)) ;
+  color: #f5edff ;
 }
 
 .skill:hover{
@@ -173,8 +183,8 @@ export default defineComponent({
 .skillicon{
   width: 90px;
   margin: 0;
-  filter: drop-shadow(0px 0px 10px rgb(255, 0, 0)) invert(15%);
-      
+  filter: drop-shadow(4px 4px 0px rgb(140, 0, 255)) ;
+  
 }
 
 
@@ -190,6 +200,11 @@ export default defineComponent({
   align-items: center;
   padding-bottom: 70px;
   padding-top: 70px;
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
   
 
 }
@@ -201,17 +216,13 @@ export default defineComponent({
   outline: none;
   cursor: pointer;
   font-size:20px;
-  border-radius: 4px;
-  
-  text-shadow:0 0 1vw #ff0000;
-  color: #ffe2e2 ;
-  
+  font-style: oblique;
+  /* text-shadow:0 0 1vw #8800ff; */
+   filter: drop-shadow(2px 2px 0px rgb(140, 0, 255)) ;
+  /* color: #ff3cf8 ; */
+  color: #e6d0ff ;
+  font-family:'Atomic Age', cursive;
 
-}
-
-.btn{
- 
-  
 }
 
 
@@ -223,22 +234,14 @@ export default defineComponent({
 
 .diamond{
 
-  border-bottom: 5px  solid rgb(184, 249, 255);
-  border-right: 5px  solid rgb(184, 249, 255);
-  
-  filter: drop-shadow(0 0 4px rgb(0, 110, 255));
+  border-bottom: 4px dashed rgb(184, 249, 255);
+  /* border-right: 2px  solid rgba(184, 249, 255, 0.553); */
+  text-shadow:  0 0 1vw #106cff, 0 0 3vw #106cff, 0 0 10vw #106cff, 0 0 10vw #106cff, 0 0 .4vw #7faffe;
+  color: rgb(226, 255, 255);
+  /* background-color: rgb(22, 22, 30); */
+  filter: drop-shadow(0px 0px 2px rgb(21, 0, 255));
+
 }
-
-
-#skills-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content:center;
-  align-items: center;
-}
-
-
 
 
 

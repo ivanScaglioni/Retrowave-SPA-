@@ -43,16 +43,15 @@ body {
    
   padding: 0;
   margin: 0;
-
   transition-duration: 1s;
-
+  font-family: 'Poiret One', cursive  ;
 
   
 }
 
 *{
   scroll-behavior:smooth;
-  font-family: 'Poiret One', cursive  ;
+  
 
 
 }

@@ -1,7 +1,7 @@
 <template>
   <section id="links">
     
-    <h2 id="contact-title">Let's talk</h2>
+    <p class="title" id="t-links">Let's talk</p>
     <div id="contactme"></div>
   </section>
 </template>
@@ -21,7 +21,7 @@ export default defineComponent({
         },
         {
           enlace: "https://www.linkedin.com/in/ivan-sca-6b7719221/",
-          name: "Likedin",
+          name: "Linkedin",
           icon: "icon-linkedin.svg",
         },
         {
@@ -66,10 +66,7 @@ export default defineComponent({
 </script>
 
 <style>
-#contact-title {
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
+
 
 .contacticon {
   width: 50px;
@@ -96,15 +93,23 @@ export default defineComponent({
 #links {
   display: flex;
   flex-direction: column;
-  
+  font-family:'Atomic Age', cursive;
   padding-bottom: 80px;
-  text-shadow: 0 0 1vw #fff710;
-  color: #ffffc1;
+
   z-index: 15000;
 }
+
+#t-links{
+text-shadow:  0 0 1vw #dbff10,  0 0 .4vw #ecff7f;
+color: #fffceb ;
+}
 .a_link{
-    text-shadow:0 0 1vw #ffff10;
-  color: #fff7d0 ;
+  
+  color: #ffffff ;
+}
+
+.a_link:hover{
+ text-shadow:0 0 1vw #ffff10;
 }
 
 </style>
