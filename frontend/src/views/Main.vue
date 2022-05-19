@@ -143,7 +143,7 @@ export default defineComponent({
   gap: 2vh 0px;
   flex-direction: column;
   animation-name: downLoop;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: cubic-bezier(1, 1, 1, 1);
 }
@@ -169,15 +169,37 @@ section {
   align-items: center;
 }
 
+
+
 main {
   width: 100%;
 }
 a {
   text-decoration: none;
 }
-h2 {
-  padding: 0;
-  margin: 0;
+
+
+#t-skills, #t-links{
+  text-decoration: underline;
+  font-style: oblique;
+  text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
+  
+}
+
+
+#links, #skills, #moreinfo{
+  text-shadow: 0.1vw 0.1vw  #8c00ff ;
+  
+}
+
+.h{
+text-decoration: underline;
+/* text-shadow:0 0 10px #2fff00; */
+}
+
+#t-skills, #t-links, .a_link{
+  font-family:'Atomic Age', cursive;
+
 }
 
 @keyframes downLoop {

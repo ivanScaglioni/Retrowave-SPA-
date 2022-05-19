@@ -1,6 +1,5 @@
 <template>
   <section id="links">
-    
     <p class="title" id="t-links">Let's talk</p>
     <div id="contactme"></div>
   </section>
@@ -50,7 +49,7 @@ export default defineComponent({
       contactA.setAttribute("class", "a_link");
       contactDiv.setAttribute("class", "contact");
       contactImg.src = this.contactSrc + this.arrLinks[index].icon;
-      contactImg.setAttribute("class", "contacticon");
+      contactImg.setAttribute("class", "contacticon icon");
 
       contactA.href = this.arrLinks[index].enlace;
       contactA.setAttribute("target", "_blank");
@@ -69,16 +68,16 @@ export default defineComponent({
 
 
 .contacticon {
-  width: 50px;
-  filter: drop-shadow(0px 0px 5px rgb(255, 77, 0)) invert(20%);
+  width:3vw;
+  
 }
 
 .contact {
   display: flex;
-  gap: 20px;
+  gap: 1.5vw;
   min-width: 100%;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 1vw;
 
 }
 
@@ -93,16 +92,10 @@ export default defineComponent({
 #links {
   display: flex;
   flex-direction: column;
-  font-family:'Atomic Age', cursive;
-  padding-bottom: 80px;
-
-  z-index: 15000;
+  padding-bottom: 5vw;
 }
 
-#t-links{
-text-shadow:  0 0 1vw #dbff10,  0 0 .4vw #ecff7f;
-color: #fffceb ;
-}
+
 .a_link{
   
   color: #ffffff ;

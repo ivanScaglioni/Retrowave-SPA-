@@ -40,7 +40,6 @@ export default defineComponent({
 .btn-a{
   text-align: center;
   font-family: 'Flow Rounded', cursive;
-  font-size: 70px;
   color: rgb(255, 255, 255);
   text-shadow: 0 0 2px red;
   filter: drop-shadow(0px 0px 20px rgb(255, 0, 0)) invert(20%);

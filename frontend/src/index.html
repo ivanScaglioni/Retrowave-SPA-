@@ -48,19 +48,12 @@
 
     <style>
         @media all and (max-width: 1280px) {
-        
-            /* ----------NAV---------- */
-            
-
-
-            
-
 
             
             /* ------------ ABOUT ME------------- */
             @keyframes contraer {
                 from {
-                height: 700px;
+                height: 830px;
                 }
                 to {
                 height: 0;
@@ -73,11 +66,20 @@
                 height: 0;
                 }
                 to {
-                height: 700px;
+                height: 830px;
                 
                 }
             }
-        
+            #moreinfo{
+                width: auto;
+                margin-left: 2vw;
+                margin-right: 2vw;
+            }
+            
+            .a_link{
+                font-size:var(--text-size-medium);
+            }
+
             body{
                 font-size: var(--text-size-medium);
             }
@@ -85,51 +87,67 @@
             .btn-skill{
                 font-size: var(--text-size-medium);
             }
-            
-            .title{
-                font-size: var(--title-size-m);
+            .skill{
+                width: 90px;
             }
-            
+            #conte{
+                width: 70%;
+                gap: 20px 50px;
+            }
+            .skillicon{
+                width: 80px;
+            }
+            #iconinfo{
+                width:  50px;
+            }
+            .contacticon{
+                width:  50px;
+            }
+            .icon{
+                filter: drop-shadow( 4px 4px 0 #8c00ff );
+            }
+            .title{
+                font-size: var(--title-size-l);
+            }
+            .btn-a{
+                font-size: 70px;
+            }
+            #links{
+                padding-bottom: 100px;
+            }
         
         }
         @media all and (min-width: 1280px) {
             
             body{
-                font-size: var(--text-size-large);
+                font-size: var(--vw-small);
             }
             
             .btn-skill{
-                font-size: var(--text-size-medium);
+                font-size: var(--vw-small);
             }
             
+            .skill{
+                font-size: var(--vw-medium);
+            }
+
             .title{
-                font-size: var(--title-size-l);
+                font-size: var(--vw-big);
+            }
+            .btn-a{
+                font-size: var(--vw-big);
             }
             
+
+            .icon{
+                filter: drop-shadow(0.3vw 0.3vw 0 #8c00ff); 
+            }
 
         
         }
         @media all and (max-width: 600px) {
             /* ------------ ABOUT ME------------- */
-            @keyframes contraer {
-                from {
-                height: 620px;
-                }
-                to {
-                height: 0;
-                
-                }
-            }
-            
-            @keyframes expandir {
-                from {
-                height: 0;
-                }
-                to {
-                height: 620px;
-                
-                }
-            }
+
             body{
                 font-size: var(--text-size-small);
             }
@@ -138,20 +156,40 @@
                 font-size: var(--text-size-small);
             }
             
+            .skill{
+                font-size: var(--text-size-medium);
+                width: 90px;
+            }
+
             .title{
                 font-size: var(--title-size-m);
             }
-            .skill{
-                width: auto;
+            ul{
+                padding: 0;
             }
+
             #conte {
-                gap: 20px 10px  ;
+                width: 100%;
+                gap: 20px 40px  ;
                 min-height: 200px  ;
             }
             .skillicon{
                 width: 70px  ;
                 height: 70px ;
                 margin: 0  ;
+            }
+            .contact{
+               flex-direction: column; 
+            }
+            .separador{
+                border-top: 2px solid white ;
+            }
+            #links, #skills, #moreinfo{
+                text-shadow: 1px 1px  #8c00ff ;
+  
+            }      
+            #contactme{
+                gap: 40px 0px;
             }
         }
         @media all and (max-width: 400px) {
@@ -172,22 +210,40 @@
                 height: 0;
                 }
                 to {
-                height: 720px;
+                height:720px;
                 
                 }
             }
             
-            
+            #iconinfo{
+                width:  30px;
+            }
             ul{
                 padding: 0;
             }
-            
-            body{
-                font-size: var(--text-size-small);
+            .skill{
+                width: 70px;
+                
+            }
+            .skillicon{
+                width: 60px;
+            }
+            #conte{
+                gap: 20px 30px  ;
             }
             
+            body{
+                font-size: var(--text-size-ss);
+            }
+            .skill{
+                font-size: var(--text-size-small);
+            }
+            .a_link{
+                font-size: var(--text-size-ss)
+            }
+
             .btn-skill{
-                font-size: var(--text-size-medium);
+                font-size: var(--text-size-small);
             }
             
             .title{
