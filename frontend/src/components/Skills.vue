@@ -189,7 +189,7 @@ export default defineComponent({
   display: flex;
   width: 50%;
   min-height: 15vw;
-  justify-content: space-around;
+  justify-content: baseline;
   gap: 3vw 7vw;
   align-items: baseline;
   align-items: center;
