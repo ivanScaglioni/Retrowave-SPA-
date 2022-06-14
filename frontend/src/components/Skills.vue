@@ -114,29 +114,33 @@ export default defineComponent({
     
     
     const contenedor = document.getElementById("conte") as HTMLElement;
-
-    for (let index = 0; index < this.arrSkills.length; index++) {
-      const skilldiv = document.createElement("div");
-      const skillicon = document.createElement("img");
-      const skillname = document.createElement("div");
-
-
-
-
-      skillicon.src = this.rute + this.arrSkills[index].nameIcon;
-      skillicon.setAttribute('class','skillicon icon')
-      skillname.innerHTML = this.arrSkills[index].name;
-
-      skilldiv.className = this.arrSkills[index].for;
-
-
-      skilldiv.appendChild(skillname);
-      skilldiv.appendChild(skillicon);
+    this.see("skill");
+    if(contenedor.childElementCount < 1){
+      for (let index = 0; index < this.arrSkills.length; index++) {
+        const skilldiv = document.createElement("div");
+        const skillicon = document.createElement("img");
+        const skillname = document.createElement("div");
 
 
 
-      contenedor.appendChild(skilldiv);
+
+        skillicon.src = this.rute + this.arrSkills[index].nameIcon;
+        skillicon.setAttribute('class','skillicon icon')
+        skillname.innerHTML = this.arrSkills[index].name;
+
+        skilldiv.className = this.arrSkills[index].for;
+
+
+        skilldiv.appendChild(skillname);
+        skilldiv.appendChild(skillicon);
+
+
+
+        contenedor.appendChild(skilldiv);
+      }
+
     }
+    
   },
 });
 </script>
@@ -208,7 +212,11 @@ export default defineComponent({
 
 
 
-
+.tabs{
+  display: flex;
+  gap: 2vw;
+  /* border-bottom: 0.3vw solid rgb(136, 0, 255); */
+}
 
 .diamond{
 

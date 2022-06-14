@@ -40,26 +40,28 @@ export default defineComponent({
   methods: {},
   mounted() {
     const containerLinks = document.getElementById("contactme") as HTMLElement;
-    var flag = true;
-    for (let index = 0; index < this.arrLinks.length; index++) {
-      const contactDiv = document.createElement("div");
-      const contactImg = document.createElement("img");
-      const contactA = document.createElement("a");
+    if(containerLinks.childElementCount < 1){
+      for (let index = 0; index < this.arrLinks.length; index++) {
+        const contactDiv = document.createElement("div");
+        const contactImg = document.createElement("img");
+        const contactA = document.createElement("a");
 
-      contactA.setAttribute("class", "a_link");
-      contactDiv.setAttribute("class", "contact");
-      contactImg.src = this.contactSrc + this.arrLinks[index].icon;
-      contactImg.setAttribute("class", "contacticon icon");
+        contactA.setAttribute("class", "a_link");
+        contactDiv.setAttribute("class", "contact");
+        contactImg.src = this.contactSrc + this.arrLinks[index].icon;
+        contactImg.setAttribute("class", "contacticon icon");
 
-      contactA.href = this.arrLinks[index].enlace;
-      contactA.setAttribute("target", "_blank");
-      contactA.innerHTML = this.arrLinks[index].name;
+        contactA.href = this.arrLinks[index].enlace;
+        contactA.setAttribute("target", "_blank");
+        contactA.innerHTML = this.arrLinks[index].name;
 
-      contactDiv.appendChild(contactImg);
-      contactDiv.appendChild(contactA);
+        contactDiv.appendChild(contactImg);
+        contactDiv.appendChild(contactA);
 
-      containerLinks.appendChild(contactDiv);
+        containerLinks.appendChild(contactDiv);
+      }
     }
+    
   },
 });
 </script>
