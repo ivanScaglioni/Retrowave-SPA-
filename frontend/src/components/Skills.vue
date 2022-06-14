@@ -3,7 +3,7 @@
     
     
     
-    <div class="title" id="t-skills">  Skills  </div> 
+    <div class="title-l">  Skills </div> 
 
     <div class="tabs section">
       <button id="btn-skill" class="btn-skill diamond" @click="see('skill')">
@@ -147,19 +147,11 @@ export default defineComponent({
 #skills{
   display: flex;
   gap: 2vw 0;
-  
-  
+  font-weight: bold;
   
 }
 
-#t-skills{
 
-  width: 100%;
-  text-align: center;
- /* color: #e6d0ff ; */
-  /* font-style: oblique; */
-
-}
 
 .skill{
   display:flex;
@@ -189,14 +181,12 @@ export default defineComponent({
   display: flex;
   width: 50%;
   min-height: 15vw;
-  justify-content: baseline;
+
   gap: 3vw 7vw;
-  align-items: baseline;
-  align-items: center;
   padding-top: 3vw ;
-  display: flex;
+
   justify-content: center;
-  align-content:center;
+
   align-items: center;
   
 
@@ -210,20 +200,15 @@ export default defineComponent({
   outline: none;
   cursor: pointer;
   font-style: oblique;
-  color: #e6d0ff ;
+  color: #bf9ae9 ;
   font-family:'Atomic Age', cursive;
-  text-shadow: 0.2vw 0.1vw #8c00ff ;
+
 
 }
 
 
 
-.tabs{
-  
-  display: flex;
-  gap: 1.5vw;
-  /* border-bottom: 0.3vw solid rgb(136, 0, 255); */
-}
+
 
 .diamond{
 

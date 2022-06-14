@@ -23,24 +23,23 @@
 
       </div>
     </div>
+   
+    <div class="component_container" @touchstart="handleTouchComponents($event , 'start')" @touchend="handleTouchComponents($event , 'end')" @wheel="handleWheelComponents">
 
-    <div class="component_container">
-      <div class="component">
-        <Menu />
+      <div v-if="currentComponent == 'I'" class="component">
+        <Intro />
       </div>
 
-      <div class="component">
+      <div v-else-if="currentComponent == 'A'" class="component lottext">
         <Aboutme />
-      </div>
-      
-      <div class="component">
         <Skills />
       </div>
 
-      <div class="component">
+      <div v-else-if="currentComponent == 'L'" class="component">
         <Links />
       </div>
     </div>
+
   </main>
 </template>
 
@@ -49,6 +48,9 @@
 "use strict";
 import { Component, defineComponent, defineAsyncComponent, markRaw } from "vue";
 
+const Intro = markRaw(
+  defineAsyncComponent(() => import("../components/Intro.vue"))
+) as Component;
 const Links = markRaw(
   defineAsyncComponent(() => import("../components/Links.vue"))
 ) as Component;
@@ -58,27 +60,150 @@ const Aboutme = markRaw(
 const Skills = markRaw(
   defineAsyncComponent(() => import("../components/Skills.vue"))
 ) as Component;
-const Menu = markRaw(
-  defineAsyncComponent(() => import("../components/Menu.vue"))
-) as Component;
+
 
 export default defineComponent({
+  
+  data(){
+    return{
+
+      booltimer:true,
+      boolWheel: false,
+      toucheStartCoo:[-1,-1],
+      lastKnownScrollY:-1,
+      indexComp: 0,
+      arrComp: ['I','A','L'],
+      currentComponent : "I"
+    }
+  },
+
   components: {
+    Intro,
     Skills,
     Aboutme,
     Links,
-    Menu,
+
   },
+  methods:{
+    handleWheelComponents(e:WheelEvent){
+      if(this.booltimer){
+        this.booltimer = !this.booltimer;
+        let setbootimer = setTimeout(() => {
+          this.booltimer = !this.booltimer;
+        }, 500);
+        setbootimer;
+        if(window.scrollY == this.lastKnownScrollY){
+          if(e.deltaY < 0  && window.scrollY == 0 ){
+            if(this.indexComp > 0){
+              this.indexComp--;
+            }else{
+              this.indexComp = this.arrComp.length - 1;
+            }
+          }else if(e.deltaY > 0 ){
+            if(this.indexComp < this.arrComp.length-1){
+              this.indexComp++;
+            }else{
+              this.indexComp = 0;
+            }
+          }
+          
+          this.currentComponent = this.arrComp[this.indexComp];
+          this.lastKnownScrollY = -10;
+          this.boolWheel = true
+          
+        }
+        if (this.boolWheel){
+          this.boolWheel = false;
+        }else{
+          this.lastKnownScrollY = window.scrollY;
+        }
+        
+      }
+      
+      
+      
+
+    },
+    handleTouchComponents(e : TouchEvent , s :string){
+      if(s == "start"){
+        this.toucheStartCoo[0] = e.changedTouches[0].clientX,
+        this.toucheStartCoo[1] = e.changedTouches[0].clientY
+      }else{
+        let sign = e.changedTouches[0].clientX - this.toucheStartCoo[0]
+        let base =Math.abs(sign);
+        let altura =Math.abs(e.changedTouches[0].clientY - this.toucheStartCoo[1])
+        if( base > altura && base > 50){
+          if(sign > 0){
+            if(this.indexComp > 0){
+              this.indexComp--;
+            }else{
+              this.indexComp = this.arrComp.length - 1;
+            }
+          }else{
+            if(this.indexComp < this.arrComp.length-1){
+              this.indexComp++;
+            }else{
+              this.indexComp = 0;
+            }
+          }
+          console.log(this.indexComp)
+          this.currentComponent = this.arrComp[this.indexComp];
+        }
+      }
+      
+      
+
+    }
+  },
+
 });
 </script>
 
 
 <style>
+
+main{
+  display: flex;
+  background-color: #1901288e;
+  justify-content: center;
+
+}
+.bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border:  1px solid white;
+  position: fixed;
+  
+}
+.side{
+  width: 30px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius:  50%;
+}
+.side-container{
+  display: flex;
+  gap: 10px;
+}
+.down{
+  bottom: 0px;
+}
 .component_container {
-  background-color: #3403548e;
+  display: flex;
+ 
+  overflow-x:hidden;
+  overflow-y: hidden;
+}
+.component{
+  min-width: 100vw;
+  animation-name: leftRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
 }
 
 .wall {
+  
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -88,11 +213,7 @@ export default defineComponent({
   background-color: #7209b7;
   z-index: -10;
 }
-.road {
-  height: 100vh;
-  width: 100vw;
-  object-fit: cover;
-}
+
 #curtain{
   position: absolute;
   height: 100%;
@@ -108,6 +229,7 @@ export default defineComponent({
 }
 
 #sun {
+  
   position: absolute;
   margin-top: 1vh;
   border-radius: 50%;
@@ -120,8 +242,8 @@ export default defineComponent({
   justify-content: flex-start;
   align-items: center;
   
-  filter: brightness(1.5) blur(0.1px);
-
+  filter: brightness(1.5) blur(0.5px);
+  
   box-shadow: 
   0 0 1vw #8c10ff
   , 0 0 3vw #8c10ff, 
@@ -140,7 +262,7 @@ export default defineComponent({
 #line_container{
   width: 100%;
   display:  flex;
-  gap: 2vh 0px;
+  gap: 3vh 0px;
   flex-direction: column;
   animation-name: downLoop;
   animation-duration: 4s;
@@ -154,6 +276,9 @@ export default defineComponent({
   background-color: #050008;
 }
 
+.lottext{
+  background-color: rgba(4, 3, 5, 0.485);
+}
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -164,6 +289,8 @@ export default defineComponent({
 
 
 section {
+  max-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,40 +301,34 @@ section {
 main {
   width: 100%;
 }
+
 a {
   text-decoration: none;
 }
 
 
-#t-skills, #t-links{
-  text-decoration: underline;
-  font-style: oblique;
-  text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
-  
-}
-
-
-#links, #skills, #moreinfo{
-  text-shadow: 0.1vw 0.1vw  #8c00ff ;
-  
-}
-
-.h{
-text-decoration: underline;
-/* text-shadow:0 0 10px #2fff00; */
-}
-
-#t-skills, #t-links, .a_link{
+.title-l{
   font-family:'Atomic Age', cursive;
-
+  /* font-weight: bold; */
+  /* text-decoration: underline; */
+ 
+  text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
 }
+
+.title-s{
+  font-family:'Atomic Age', cursive;
+   text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
+}
+
+
+
 
 @keyframes downLoop {
   0% {
     transform: translate(0 , 0px); 
   }
   100% { 
-    transform: translate(0 , 4vh);
+    transform: translate(0 , 5vh);
   }
 }
 

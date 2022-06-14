@@ -1,6 +1,6 @@
 <template>
   <section id="links">
-    <p class="title" id="t-links">Let's talk</p>
+    <p class="title-l" id="t-links">Let's talk</p>
     <div id="contactme"></div>
   </section>
 </template>
@@ -68,20 +68,21 @@ export default defineComponent({
 
 
 .contacticon {
-  width:3vw;
+  width:4vw;
   
 }
 
 .contact {
   display: flex;
-  gap: 1.5vw;
+  flex-direction: column;
   min-width: 100%;
   align-items: center;
-  padding-bottom: 1vw;
+  padding-bottom: 2vw;
 
 }
 
 #contactme {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,9 +91,9 @@ export default defineComponent({
 }
 
 #links {
+  font-family: 'Atomic Age', cursive;
   display: flex;
   flex-direction: column;
-  padding-bottom: 5vw;
 }
 
 

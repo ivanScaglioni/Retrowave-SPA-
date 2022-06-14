@@ -27,9 +27,13 @@ export default defineComponent({
 
 
 :root {
-  --vw-small:1.3vw;
-  --vw-medium: 1.7vw;
-  --vw-big:4vw;
+  --vw-small:1.5vw;
+  --vw-small-l:1.7;
+  --vw-medium-s: 2vw;
+
+  --vw-medium-l:4vw;
+
+  --vw-big:7vw;
   --text-size-ss:1rem;
   --text-size-small:1.2rem;
   --text-size-medium:1.3rem;
@@ -37,12 +41,13 @@ export default defineComponent({
   --title-size-l: 4.7rem;
   --title-size-m: 3.2rem;
   --title-size-s: 2.1rem;
+  --title-size-ss: 1.8rem;
 }
 
 
 
 body {
-   
+  overflow-y:visible;
   padding: 0;
   margin: 0;
   transition-duration: 1s;
