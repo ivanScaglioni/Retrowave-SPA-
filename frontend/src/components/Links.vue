@@ -93,7 +93,7 @@ export default defineComponent({
 }
 
 #links {
-  font-family: 'Atomic Age', cursive;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,9 @@ export default defineComponent({
 
 
 .a_link{
-  
+  font-family: 'Comfortaa', cursive;
+  font-family: 'Poiret One', cursive  ;
+   font-weight: bold;
   color: #ffffff ;
 }
 

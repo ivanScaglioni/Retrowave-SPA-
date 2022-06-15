@@ -296,8 +296,6 @@ a {
 
 .title-l{
   font-family:'Atomic Age', cursive;
-
- 
   text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
 }
 
