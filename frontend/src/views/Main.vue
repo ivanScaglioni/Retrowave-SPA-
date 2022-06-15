@@ -168,34 +168,21 @@ main{
   justify-content: center;
 
 }
-.bar{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border:  1px solid white;
-  position: fixed;
-  
+.road {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
 }
-.side{
-  width: 30px;
-  height: 20px;
-  border: 1px solid red;
-  border-radius:  50%;
-}
-.side-container{
-  display: flex;
-  gap: 10px;
-}
-.down{
-  bottom: 0px;
-}
+
+
 .component_container {
   display: flex;
- 
+  
   overflow-x:hidden;
   overflow-y: hidden;
 }
 .component{
+
   min-width: 100vw;
   animation-name: leftRight;
   animation-duration: 1s;
@@ -203,7 +190,6 @@ main{
 }
 
 .wall {
-  
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -283,23 +269,24 @@ main{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+
 }
 
 
 section {
-  max-width: 100vw;
-  min-height: 100vh;
+  min-width: 100vw;
+  
   display: flex;
   flex-direction: column;
+  
   align-items: center;
 }
 
 
 
 main {
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 a {
@@ -309,8 +296,7 @@ a {
 
 .title-l{
   font-family:'Atomic Age', cursive;
-  /* font-weight: bold; */
-  /* text-decoration: underline; */
+
  
   text-shadow: 0 0 1vw #8c00ff, 0 0 3vw #8c00ff, 0 0 10vw #8c00ff, 0 0 10vw #8c00ff, 0 0 .4vw #d6a3ff;
 }

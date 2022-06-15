@@ -152,7 +152,10 @@ export default defineComponent({
   display: flex;
   gap: 2vw 0;
   font-weight: bold;
-  
+  padding-top: 5vh;
+
+  min-height: 50vw;
+
 }
 
 
@@ -183,10 +186,13 @@ export default defineComponent({
 #conte {
   
   display: flex;
+
   width: 50%;
-  min-height: 15vw;
+
+ 
 
   gap: 3vw 7vw;
+
   padding-top: 3vw ;
 
   justify-content: center;

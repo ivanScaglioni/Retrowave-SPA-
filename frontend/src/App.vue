@@ -48,6 +48,7 @@ export default defineComponent({
 
 body {
   overflow-y:visible;
+  overflow-x:hidden;
   padding: 0;
   margin: 0;
   transition-duration: 1s;

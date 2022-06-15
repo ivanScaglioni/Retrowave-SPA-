@@ -69,11 +69,11 @@ export default defineComponent({
 
 <style>
 #aboutme {
-  min-height: 100vh;
+  
   display: flex;
-  justify-content: center;
+  
   text-align: justify;
-  padding-top: 5vw ;
+  padding-top: 17vh;
   
 
 }
