@@ -3,7 +3,7 @@
     
     
     
-    <div class="title-l">  Skills </div> 
+    <div class="title-l" id="t-skill">  Skills </div> 
 
     <div class="tabs section">
       <button id="btn-skill" class="btn-skill diamond" @click="see('skill')">
@@ -157,7 +157,6 @@ export default defineComponent({
   min-height: 50vw;
 
 }
-
 
 
 .skill{

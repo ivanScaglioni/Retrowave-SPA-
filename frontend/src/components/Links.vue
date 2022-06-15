@@ -1,6 +1,6 @@
 <template>
   <section id="links">
-    <p class="title-l" id="t-links">Let's talk</p>
+    <p class="title-l" id="t-links">Links</p>
     <div id="contactme"></div>
   </section>
 </template>
@@ -96,6 +96,9 @@ export default defineComponent({
   font-family: 'Atomic Age', cursive;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
 }
 
 
