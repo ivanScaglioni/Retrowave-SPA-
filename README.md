@@ -1,5 +1,5 @@
 # Retrowave SPA
-👉 The result of this repository can be seen in https://ivanscaglioni.github.io
+
 
 ## TOOLS USED IN THE PROJECT ##
 
